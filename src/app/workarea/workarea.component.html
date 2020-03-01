@@ -1,0 +1,20 @@
+<div id="triangle">
+    <!-- Mechanism to show the hypotenuse element-->
+    <p class="noshow" *ngIf="noshow; else show">&nbsp;</p>
+    <ng-template #show>
+        <p class="hy_indent"><app-result [hypo]="hypo"></app-result></p>
+    </ng-template>
+
+    <span class="form-group">
+         <input type="text" id="height" name="height" class="h_indent" [(ngModel)]="height" >
+    </span>
+    <span>
+         <input type="text" id="width" name="width" class="w_indent" [(ngModel)]="width"  >
+    </span>
+</div>
+<br>
+<button class="btn btn-primary" (click)="handleSubmit()">Calculate!</button>
+<br>
+<br>
+<button class="btn btn-danger" (click)="reset()">&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+

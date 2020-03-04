@@ -1,15 +1,15 @@
 <div id="triangle">
-    <!-- Mechanism to show the hypotenuse element-->
-    <p class="noshow" *ngIf="noshow; else show">&nbsp;</p>
-    <ng-template #show>
+    <!-- Mechanism to show the hypotenuse element when hypo is not null-->
+    <p class="noshow" *ngIf="hypo==null; else showhypo">&nbsp;</p>
+    <ng-template #showhypo>
         <p class="hy_indent"><app-result [hypo]="hypo"></app-result></p>
-    </ng-template>
+    </ng-template> 
 
     <span class="form-group">
-         <input type="text" id="height" name="height" class="h_indent" [(ngModel)]="height" >
+         <input type="number" id="height" name="height" class="h_indent" [(ngModel)]="height" >
     </span>
     <span>
-         <input type="text" id="width" name="width" class="w_indent" [(ngModel)]="width"  >
+         <input type="number" id="width" name="width" class="w_indent" [(ngModel)]="width"  >
     </span>
 </div>
 <br>

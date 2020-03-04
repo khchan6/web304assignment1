@@ -13,7 +13,7 @@ export class WorkareaComponent implements OnInit {
   width:number=null;
   height:number=null;
   hypo:string=null;
-  noshow:boolean=true;
+  inputerror:boolean=false;
 
   // pythagorean function and round the result to nearest 1 decimal
   pythagorean(width, height) {
@@ -22,27 +22,28 @@ export class WorkareaComponent implements OnInit {
 
   // Event procedure for calculate button click
   handleSubmit(){
-    this.noshow=false;
     
+    //Input error handling
+    this.inputerror=false;
+    if ((this.width<1 || this.width==null) || (this.height <1 || this.width==null)){
+      this.inputerror=true;
+    }
+
     // pythagorean theorm calculation
-    this.hypo=this.pythagorean(this.width, this.height);
+    if (this.inputerror==false) {
+      this.hypo=this.pythagorean(this.width, this.height);
+    }
 
     //debug info
-    console.log(this.height, this.width,this.hypo);
-    console.log(this.noshow);
-
+    console.log(this.inputerror, this.height, this.width,this.hypo);
   }
 
   // Event procedure for reset button click
   reset(){
-    this.noshow=true;
-    
     this.width=null;
     this.height=null;
-    // debug info
-    console.log(this.noshow);
+    this.hypo=null;
   }
-  
   
   ngOnInit() {
   }

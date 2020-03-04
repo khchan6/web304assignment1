@@ -8,30 +8,31 @@
   }
 
   .h_indent{
-    margin-left: -60px; 
-    padding-bottom: 10px;
+    position: absolute;
+    left: -40px;
+    top: 55px;
     width: 50px;
-    line-height:15px;  
     text-align: center;   
   }
 
   .w_indent{
-    margin-left: 50px; 
-    margin-top: 15px;
-    width: 40px;
+    position: absolute;
+    left: 50px;
+    top: 125px;
+    width: 50px;
     text-align: center;
    }
- 
+
    .hy_indent{
-    margin-left: 60px;
-    width: 40px;
-    padding-top: 15px; 
+    position: absolute;
+    top: 40px; 
+    left: 95px;
     color: green;
     font-size: larger;
   }
 
   .noshow{
-    margin-left: 70px;
-    width: 40px;
-    padding-top: 15px; 
+    position: absolute;
+    top: 40px; 
+    left: 100px;
   }

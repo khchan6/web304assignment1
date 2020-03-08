@@ -12,12 +12,12 @@ export class WorkareaComponent implements OnInit {
 
   width:number=null;
   height:number=null;
-  hypo:string=null;
+  hypo:number=null;
   inputerror:boolean=false;
 
   // pythagorean function and round the result to nearest 1 decimal
   pythagorean(width, height) {
-    return (Math.sqrt(this.height*this.height+this.width*this.width).toFixed(1));
+    return Number(Math.sqrt(this.height*this.height+this.width*this.width).toFixed(1));
   }
 
   // Event procedure for calculate button click
